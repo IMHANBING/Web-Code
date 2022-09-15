@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复杂表格</title>
+</head>
+<body>
+<table border="1" width="80%" align="center" cellspacing="0" cellpadding="10">
+  <caption>XXX班学生统计</caption>
+  <thead>
+  <tr>
+    <th width="5%">序号</th>
+    <th width="20%">学号</th>
+    <th width="15%">姓名</th>
+    <th width="10%">性别</th>
+    <th width="10%">年龄</th>
+    <th width="30%">籍贯</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">20881156</td>
+    <td align="center">郭寒冰</td>
+    <td align="center">男</td>
+    <td align="center">21</td>
+    <td align="center">河北省张家口</td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td align="center">20881231</td>
+    <td align="center">XXX</td>
+    <td align="center">男</td>
+    <td align="center">21</td>
+    <td align="center">河北省XXX</td>
+  </tr>
+  </tbody>
+
+  <tfoot>
+  <tr>
+    <th></th>
+    <th>统计</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </tfoot>
+</table>
+
+<br>
+<br>
+
+<!--跨行跨列-->
+
+<table border="1" width="50%" align="center" cellpadding="20" cellspacing="0">
+  <tr align="center">
+    <td>11</td>
+    <td colspan="3">12</td>
+<!--注释快捷键：command+/ -->
+  </tr>
+  <tr align="center">
+    <td>21</td>
+    <td rowspan="2">22</td>
+    <td colspan="2">23</td>
+  </tr>
+  <tr align="center">
+    <td>31</td>
+    <td rowspan="2">33</td>
+    <td>34</td>
+  </tr>
+  <tr align="center">
+    <td>41</td>
+    <td>42</td>
+    <td>44</td>
+  </tr>
+</table>
+</body>
+</html>

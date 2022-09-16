@@ -80,9 +80,12 @@ post方法提交：会把数据直接编码到http消息体-->
                 <table border="1" width="100%" cellspacing="0" cellpadding="10">
 <!--                    <input type="hidden" name="orgId" value="100">-->
                     <tr>
-                        <td width="25%" align="right">用户名：</td>
+                        <td width="25%" align="right"><label for="userName">用户名：</label></td>
                         <td>
                             <input type="text"
+                                   required
+                                   minlength="2"
+                                   maxlength="10"
                                    id="userName"
                                    name="userName"
                                    size="30">
@@ -90,9 +93,12 @@ post方法提交：会把数据直接编码到http消息体-->
                     </tr>
 
                     <tr>
-                        <td align="right">密码：</td>
+                        <td align="right"><label for="userPwd1">密码：</label></td>
                         <td>
                             <input type="password"
+                                   required
+                                   minlength="6"
+                                   maxlength="15"
                                    id="userPwd1"
                                    name="userPwd1"
                                    size="30">
@@ -101,7 +107,10 @@ post方法提交：会把数据直接编码到http消息体-->
                     <tr>
                         <td align="right">重复密码：</td>
                         <td>
-                            <input type="password" id="userPwd2" name="userPwd2" size="30">
+                            <input type="password"
+                                   id="userPwd2"
+                                   name="userPwd2"
+                                   size="30">
                         </td>
                     </tr>
 
@@ -114,7 +123,7 @@ post方法提交：会把数据直接编码到http消息体-->
                     </tr>
 
                     <tr>
-                        <td align="right">爱好:</td>
+                        <td align="right">爱好：</td>
                         <td>
                             <input type="checkbox" name="hobby" value="唱歌">唱歌<br>
                             <input type="checkbox" name="hobby" value="跳舞" checked>跳舞<br>
@@ -131,21 +140,50 @@ post方法提交：会把数据直接编码到http消息体-->
                     </tr>
 
                     <tr>
-                        <td></td>
+                        <td align="right">班级：</td>
                         <td>
-
+                            <select name="clazz" size="1">
+                                <option value="2001">2001班</option>
+                                <option value="2002">2002班</option>
+                                <option value="2003" selected>2003班</option>
+                                <option value="2004">2004班</option>
+                                <option value="2005">2005班</option>
+                                <option value="2006">2006班</option>
+                                <option value="2007">2007班</option>
+                                <option value="2008">2008班</option>
+                            </select>
                         </td>
                     </tr>
 
+                    <tr>
+                        <td align="right">个人简介：</td>
+                        <td>
+                            <textarea cols="40" rows="6" name="desc"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>地址信息：</legend>
+                                邮编：<input type="text" name="addressNo">
+                                <br>
+                                地址：<input type="text" name="address" size="50">
+                            </fieldset>
+                        </td>
+                    </tr>
                 </table>
             </td>
         </tr>
 
         <tr>
-            <td>
-
+            <td align="center">
+                <button type="submit">提交</button>
+                <input type="reset" value="重置">
+                <button type="button">取消</button>
             </td>
         </tr>
+
     </table>
 </form>
 

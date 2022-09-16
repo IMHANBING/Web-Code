@@ -8,8 +8,8 @@
 
 <!--
 method方法：
-get方法提交：会把数据拼装到地址栏的URL上，并且受地址栏URL长度限制
-post方法提交：-->
+get方法提交：会把数据拼装到地址栏的URL上（不安全），并且受地址栏URL长度限制
+post方法提交：会把数据直接编码到http消息体-->
 
 <!-- action：定义表单被提交发生的动作，一般是服务器提供的URL地址
      method：表单数据提交的方式，get/post
@@ -58,6 +58,95 @@ post方法提交：-->
 
     <button type="submit">登录</button>
 
+</form>
+
+<br>
+<br>
+
+<!--注册表单-->
+
+<form id="frmUser"
+      name="frmUser"
+      action=""
+      method="post">
+
+    <table border="0" width="60%" align="center" cellspacing="0" cellpadding="5">
+        <tr>
+            <td align="center">用户注册</td>
+        </tr>
+        <tr>
+            <td>
+
+                <table border="1" width="100%" cellspacing="0" cellpadding="10">
+<!--                    <input type="hidden" name="orgId" value="100">-->
+                    <tr>
+                        <td width="25%" align="right">用户名：</td>
+                        <td>
+                            <input type="text"
+                                   id="userName"
+                                   name="userName"
+                                   size="30">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">密码：</td>
+                        <td>
+                            <input type="password"
+                                   id="userPwd1"
+                                   name="userPwd1"
+                                   size="30">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">重复密码：</td>
+                        <td>
+                            <input type="password" id="userPwd2" name="userPwd2" size="30">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">性别：</td>
+                        <td>
+                            <input type="radio" name="sex" value="0" checked>男 &nbsp;
+                            <input type="radio" name="sex" value="1">女 &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">爱好:</td>
+                        <td>
+                            <input type="checkbox" name="hobby" value="唱歌">唱歌<br>
+                            <input type="checkbox" name="hobby" value="跳舞" checked>跳舞<br>
+                            <input type="checkbox" name="hobby" value="逛街">逛街<br>
+                            <input type="checkbox" name="hobby" value="旅游">旅游<br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right">头像：</td>
+                        <td>
+                            <input type="file" name="userIcon">请选择头像图片
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+
+            </td>
+        </tr>
+    </table>
 </form>
 
 

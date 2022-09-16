@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件</title>
+</head>
+<body>
+
+<!--
+method方法：
+get方法提交：会把数据拼装到地址栏的URL上，并且受地址栏URL长度限制
+post方法提交：-->
+
+<!-- action：定义表单被提交发生的动作，一般是服务器提供的URL地址
+     method：表单数据提交的方式，get/post
+     enctype：表单数据进行编码方式
+     name：表单名称
+     ID：表单ID-->
+
+<!-- 表单控件有：
+        input元素：文本输入框，按钮，单选复选框，文件选择框
+        button元素：按钮
+        textarea元素：多行文本输入框
+        select和option元素：选项框-->
+<!-- <input>是一个单标记
+        主要属性：
+        type：创建各种类型输入，比如文本框，输入框
+        value:控件的数据
+        name:控件的名称
+        id:控件ID
+
+        文本框，密码框主要属性：
+            ⎻ id/name:输入框id及名字
+            ⎻ value:用户输入的任何文本
+            ⎻ placeholder:占位符
+            ⎻ minlength/maxlength:限制输入的字符数
+            ⎻ readonly:设置为只读
+            ⎻ size:输入框大小
+        -->
+
+<form id ="frmLogin" name="frmLogin"
+      action="login"
+      method="post"
+      enctype="multipart/form-data">
+
+    用户名：<input type="text"
+                  id="userLoginId"
+                  name="userLoginId"
+                  value=""
+                  placeholder="请输入用户名">
+    <br>
+
+    密码&nbsp;&nbsp;&nbsp;&nbsp;：<input type="password"
+                id="userPwd"
+                name="userPwd"
+                placeholder="请输入密码">
+    <br>
+
+    <button type="submit">登录</button>
+
+</form>
+
+
+</body>
+</html>

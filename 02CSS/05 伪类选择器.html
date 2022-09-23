@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+
+    <style>
+      #mytable1{
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .mytable2{
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .mytable2 th, .mytable2 td{
+        border: 1px solid black;
+      }
+
+      /**
+      使用伪类设置表格斑马线
+       */
+
+      .mytable2 tbody tr:nth-child(2n+1){
+        background-color: #c6c3c3;
+      }
+      .mytable2 tbody tr:nth-child(2n){
+        background-color: #f8f6f6;
+      }
+
+      /**
+      表头
+       */
+      .mytable2 thead tr{
+        background-color: black;
+        color: #ffffff;
+      }
+
+    </style>
+
+</head>
+<body>
+
+<table id="mytable1">
+  <tr>
+    <td>用户列表</td>
+  </tr>
+  <tr>
+    <td>
+      <table class="mytable2">
+        <thead>
+        <tr>
+          <th>序号</th>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>班级</th>
+          <th>学号</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>张三</td>
+          <td>男</td>
+          <td>2003</td>
+          <td>20030001</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>张三</td>
+          <td>男</td>
+          <td>2003</td>
+          <td>20030001</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>张三</td>
+          <td>男</td>
+          <td>2003</td>
+          <td>20030001</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>张三</td>
+          <td>男</td>
+          <td>2003</td>
+          <td>20030001</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>张三</td>
+          <td>男</td>
+          <td>2003</td>
+          <td>20030001</td>
+        </tr>
+        </tbody>
+        <tr>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标记选择器</title>
+
+    <style>
+      /**
+      1 标记选择器：使用HTML标记名称作为选择器名称
+       */
+      p{
+        color: #00f2ff;
+      }
+      span{
+        color: red;
+      }
+      div{
+        color: #fc6eb3;
+      }
+    </style>
+
+    <style>
+        /**
+        2 类选择器：使用.开头定义
+          类的选择 html标记通过class属性，引用类选择器
+         */
+        .first{
+            front-weigt:bold;
+        }
+        .second{
+            color: #ff00c8;
+        }
+        .done{
+            text-decoration: line-through;
+            color: #00ff5d;
+        }
+    </style>
+
+    <style>
+        /**
+        3 id选择器：使用#开头，定义一个选择器名称
+        html标签的id属性值与ID选择器名称匹配时，规则生效
+         */
+        #abc{
+            front-family: STFangsong;
+        }
+        #efg{
+            front-family: STHeiti;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+<body>
+
+<!--通过html标记名称去匹配css规则的选择器名称-->
+<p>这是p标签</p>
+<p>这还是p标签，<span>这是span标签</span></p>
+<div>这是div的区域</div>
+
+<!--2 使用class属性通过类选择器名称引用css规则-->
+<ul>
+    <li class="first">xxxxx</li>
+    <li class="second">yyyyy</li>
+    <li class="done">zzzzz</li>
+</ul>
+
+<!--3 -->
+
+<p id="abc">郭寒冰</p>
+<p id="efg">郭寒冰</p>
+
+</body>
+</html>

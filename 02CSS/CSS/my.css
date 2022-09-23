@@ -1,9 +1,13 @@
 h1{
     color: deepskyblue;
-    background-color: blanchedalmond;
+    background: black;
     border: 1px solid silver;
+    text-align: center;
+    font-family: "Apple Chancery";
+
 }
 
 p{
     color: indigo;
+    text-align: center;
 }

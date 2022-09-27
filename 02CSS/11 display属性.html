@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display属性</title>
+    <style>
+
+      .box1{
+        border: 1px dashed lightseagreen;
+        background-color: lavender;
+      }
+
+      .box2{
+        width: 400px;
+        height: 50px;
+
+        font-size: xx-large;
+
+        border: 1px dashed lightseagreen;
+        background-color: lavender;
+      }
+
+
+      /**
+      默认情况下：
+      块状元素的宽高可以设置
+      行内元素的宽高不可设置，由内容决定
+
+      可以通过修改display属性值，改变块状元素/行内元素展现的行为
+       */
+
+      .box3{
+        width: 400px;
+        height: 50px;
+
+        border: 1px dashed lightseagreen;
+        background-color: lavender;
+
+        /**
+        块状元素变为行内元素
+         */
+        display: inline;
+      }
+
+      .box4{
+        width: 400px;
+        height: 50px;
+
+        border: 1px dashed lightseagreen;
+        background-color: lavender;
+
+        /**
+        行内元素变为块状元素
+         */
+        display: block;
+      }
+
+      .box5{
+        width: 400px;
+        height: 50px;
+
+        border: 1px dashed lightseagreen;
+        background-color: lavender;
+
+        /**
+        既有块状元素特性（宽高起作用），又有行内元素特性（一行摆放）
+         */
+        display: inline-block;
+      }
+
+      .box6{
+        width: 400px;
+        height: 50px;
+
+        border: 1px dashed lightseagreen;
+        background-color: lavender;
+
+        /**
+        隐藏元素
+         */
+        display: none;
+      }
+
+
+    </style>
+</head>
+<body>
+
+
+<h1 class="box1">标题1</h1>
+<h1 class="box6">标题2</h1>
+<h1 class="box5">标题3</h1>
+<h1 class="box5">标题4</h1>
+
+<p class="box1">p段落</p>
+<p class="box5">p段落</p>
+<p class="box5">p段落</p>
+<p class="box5">p段落</p>
+
+<div class="box1">div元素</div>
+<div class="box5">div元素</div>
+<div class="box5">div元素</div>
+<div class="box5">div元素</div>
+
+<a href="#" class="box1">a标签</a>
+<a href="#" class="box5">a标签</a>
+<a href="#" class="box5">a标签</a>
+<a href="#" class="box5">a标签</a>
+
+<span class="box1">span标签</span>
+<span class="box5">span标签</span>
+<span class="box5">span标签</span>
+<span class="box5">span标签</span>
+
+
+</body>
+</html>

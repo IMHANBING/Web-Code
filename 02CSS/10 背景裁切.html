@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景裁切</title>
+    <style>
+
+      .box{
+        width: 500px;
+        height: 350px;
+
+        border: 5px dashed lightseagreen;
+        background-color: lightpink;
+        background-image: url("https://czjtu.edu.cn/__local/4/78/46/692E7CEC7A5413D506333393D77_837826D3_18DE6.jpg");
+
+        padding: 40px;
+
+        /**
+
+        默认情况下：背景图片占到边框的外边缘
+
+        background-clip:
+        背景图片占到边框的外边缘：border-box;
+        图片占到内容的边缘： content-box;
+        图片占到内边距的外边缘：padding-box
+
+         */
+        background-clip: padding-box;
+
+        background-repeat: round;
+      }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="box"> </div>
+
+
+
+
+
+</body>
+</html>

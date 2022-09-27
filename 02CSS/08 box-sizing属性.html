@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box-Sizing属性</title>
+    <style>
+
+      /**
+      默认情况下：定义的width、height，就是内容的宽高
+       */
+
+      .box1{
+        width: 500px;
+        height: 400px;
+
+        padding: 30px;    /* 内边距 */
+
+        margin: 30px;     /* 外边距 */
+
+        border: 20px solid cornflowerblue;
+        background-color: aquamarine;
+      }
+
+      .box2{
+        width: 500px;
+        height: 400px;
+
+        padding: 30px;    /* 内边距 */
+
+        border: 20px solid chartreuse;
+        background-color: beige;
+
+          /**
+          box-sizing: 可以通过设置box-sizing属性值，改变盒子宽高的计算基准
+
+          box-sizing: 设置为border-box，则盒子的宽高从边框算起
+                      设置为content-box，则盒子的宽高从内容算起，是默认值
+           */
+
+        box-sizing: border-box;
+        /* box-sizing: content-box */
+      }
+
+      .box3{
+        width: 100%;
+        height: 100%;
+
+        background-color: lightpink;
+      }
+
+    </style>
+</head>
+<body>
+
+<div class="box1">
+  <div class="box3"></div>
+</div>
+
+<div class="box2">
+  <div class="box3"></div>
+</div>
+
+
+
+
+</body>
+</html>

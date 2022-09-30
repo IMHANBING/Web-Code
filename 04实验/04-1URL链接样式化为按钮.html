@@ -5,12 +5,26 @@
     <title>URL链接样式化为按钮</title>
     <style>
 
-        ul{
-            padding: 0;
-            width: 80%;
-            white-space: nowrap;
+        div{
+            width: 100%;
+            padding: 90px 1px 10px 1px;
+            margin: 0 auto;     /* 外边距 */
             text-align: center;
-            margin: 0 auto;
+            background-image: url("Image/th.jpg");
+            background-repeat: no-repeat;
+        }
+
+        p{
+            font-family: Zapfino;
+            font-size: 5em;
+            color: azure;
+        }
+
+        ul{
+            width: 80%;
+            padding: 70px 100px 140px 100px;
+            margin: 0 auto;     /* 外边距 */
+            text-align: center;
         }
         li{
             display: inline;
@@ -24,14 +38,15 @@
             outline: none;
             text-decoration: none;
             display: inline-block;
-            width: 19.5%;
-            margin-right: 0.625%;
+            width: 7em;
             text-align: center;
             line-height: 3;
             color: lightpink;
             border: 1px dashed lightpink;
-            font-size: 2em;
+            font-size: 1.5em;
             border-radius: 10px;
+            background-color: azure;
+            opacity: 0.7;
         }
         a:link{
             color: lightseagreen;
@@ -57,23 +72,27 @@
 </head>
 <body>
 
-<ul>
-    <li>
-        <a href="https://www.baidu.com">Baidu</a>
-    </li>
-    <li>
-        <a href="https://www.google.com">Google</a>
-    </li>
-    <li>
-        <a href="https://www.sogou.com">Sogou</a>
-    </li>
-    <li>
-        <a href="https://www.yahoo.com">Yahoo</a>
-    </li>
-    <li>
-        <a href="https://www.bing.com">Bing</a>
-    </li>
-</ul>
+<div>
+    <p>Search Collection</p>
+    <ul>
+        <li>
+            <a href="https://www.baidu.com">Baidu</a>
+        </li>
+        <li>
+            <a href="https://www.google.com">Google</a>
+        </li>
+        <li>
+            <a href="https://www.sogou.com">Sogou</a>
+        </li>
+        <li>
+            <a href="https://www.yahoo.com">Yahoo</a>
+        </li>
+        <li>
+            <a href="https://www.bing.com">Bing</a>
+        </li>
+    </ul>
+</div>
+
 
 </body>
 </html>

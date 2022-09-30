@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格样式化</title>
+    <style>
+      table{
+        table-layout: fixed;
+        width: 100%;
+        background-color: lightcyan;
+        border: 2px dashed lightpink;
+        border-collapse: collapse;
+      }
+
+      thead th:nth-child(1){
+        width: 30%;
+      }
+      thead th:nth-child(2){
+        width: 20%;
+      }
+      thead th:nth-child(3){
+        width: 15%;
+      }
+      thead th:nth-child(4){
+        width: 35%;
+      }
+
+      th{
+        padding: 20px;
+      }
+      td{
+        padding: 20px;
+        text-align: right;
+      }
+
+      tbody tr:nth-child(odd){
+        background-color: azure;
+      }
+      tbody tr:nth-child(even){
+        background-color: lightcyan;
+      }
+      thead,tfoot{
+        background-color: aquamarine;
+      }
+      caption{
+        font-family: STFangsong;
+        font-style: inherit;
+        font-size: 2em;
+        padding: 20px;
+        color: lightseagreen;
+        caption-side: top;
+        letter-spacing: 0.1em;
+      }
+
+      .div1{
+        width: 70%;
+
+        /*实现元素水平居中一种方式：通过设置容器的左右外边距自动分配，使得容器在父容器中水平居中*/
+        margin: 0 auto;
+      }
+
+    </style>
+</head>
+<body>
+
+<div class="div1">
+  <table>
+    <caption>软件2020级班级信息统计</caption>
+    <thead>
+    <tr>
+      <th>班级</th>
+      <th>男生</th>
+      <th>女生</th>
+      <th>合计</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+      <td>2001</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+
+    <tr>
+      <td>2002</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+
+    <tr>
+      <td>2003</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+
+    <tr>
+      <td>2004</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+
+    <tr>
+      <td>2005</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+
+    <tr>
+      <td>2006</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+
+    <tr>
+      <td>2007</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+
+    <tr>
+      <td>2008</td>
+      <td>25</td>
+      <td>10</td>
+      <td>35</td>
+    </tr>
+    </tbody>
+
+    <tfoot>
+    <tr>
+      <th>合计</th>
+      <th>250</th>
+      <th>100</th>
+      <th>350</th>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+
+
+</body>
+</html>

@@ -3,8 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>URL链接样式化为按钮</title>
+    <style>
+
+        ul{
+            padding: 0;
+            width: 80%;
+            white-space: nowrap;
+            text-align: center;
+            margin: 0 auto;
+        }
+        li{
+            display: inline;
+            margin: auto;
+        }
+        li:last-child a{
+            margin-right: 0;
+        }
+
+        a{
+            outline: none;
+            text-decoration: none;
+            display: inline-block;
+            width: 19.5%;
+            margin-right: 0.625%;
+            text-align: center;
+            line-height: 3;
+            color: lightpink;
+            border: 1px dashed lightpink;
+            font-size: 2em;
+            border-radius: 10px;
+        }
+        a:link{
+            color: lightseagreen;
+        }
+        a:visited{
+            color: lightpink;
+        }
+        a:focus{
+            border-bottom: 1px dashed;
+        }
+        a:hover{
+            color: lavender;
+            background-color: slateblue;
+            border: 2px dashed lightcyan;
+        }
+        a:active{
+            color: lightcyan;
+            background-color: aquamarine;
+        }
+
+    </style>
+
 </head>
 <body>
+
+<ul>
+    <li>
+        <a href="https://www.baidu.com">Baidu</a>
+    </li>
+    <li>
+        <a href="https://www.google.com">Google</a>
+    </li>
+    <li>
+        <a href="https://www.sogou.com">Sogou</a>
+    </li>
+    <li>
+        <a href="https://www.yahoo.com">Yahoo</a>
+    </li>
+    <li>
+        <a href="https://www.bing.com">Bing</a>
+    </li>
+</ul>
 
 </body>
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三帧结构</title>
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            height: 100vh;
+        }
+
+        .lefter {
+            width: 200px;
+            height: 100vh;
+            float: left;
+
+            background-color: lightpink;
+            opacity: 0.8;
+        }
+
+        .header {
+            width: calc(100% - 200px);
+            height: 60px;
+            float: right;
+
+            background-color: lavender;
+            opacity: 0.8;
+        }
+
+        .content {
+            width: calc(100% - 200px);
+            height: calc(100% - 60px - 50px);
+            float: right;
+
+            border: 1px dashed lightseagreen;
+            box-sizing: border-box;
+            opacity: 0.8;
+        }
+
+        .footer {
+            width: calc(100% - 200px);
+            height: 50px;
+            float: right;
+
+            background-color: lavender;
+            opacity: 0.8;
+        }
+
+        div{
+            font-size: 1.2em;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="lefter">
+        左侧:example
+    </div>
+
+    <div class="header">
+        头部:example
+    </div>
+
+    <div class="content">
+        内容:example
+    </div>
+
+    <div class="footer">
+        页脚:example
+    </div>
+
+</div>
+
+
+</body>
+</html>

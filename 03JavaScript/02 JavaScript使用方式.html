@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用方式</title>
+</head>
+<body>
+
+<!-- 1 直接在事件响应位置调用js代码 -->
+<input type="button" value="事件响应方式" onclick="alert('事件响应方式')">
+
+<input type="button" value="嵌入式" onclick="myfun()">
+
+<input type="button" value="外部js文件" onclick="test()">
+
+<script>
+
+    // 2 通过<script>标签划出的区域，执行js代码
+
+    function myfun() {
+        let a = 1;
+        let b = 2;
+        let c = a + b;
+
+        console.log("c = " + c);
+        alert("c = " + c);
+    }
+
+</script>
+
+<!-- 3 通过script标记，引入外部js文件-->
+<script src="js/my.js"></script>
+
+</body>
+</html>

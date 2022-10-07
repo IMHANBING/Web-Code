@@ -17,8 +17,23 @@
     console.log("sum(0...9) = " + sum);
 
     //2 遍历数组
-    var arr = ['a',1,'2222',false];
+    let arr = ['a', 9, '2222', false];
+    for (let index in arr) {
+        console.log(index);
 
+        console.log(arr[index]);
+    }
+
+    //3 遍历对象
+    let obj = {
+        'name' : '张三',
+        'age' : 20,
+        "性别" : '男'
+    }
+
+    for (let Key in obj) {
+        console.log(Key + " : " + obj[Key]);
+    }
 
 
 </script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串对象</title>
+</head>
+<body>
+
+<script>
+
+    let s1 = 'Hello World';
+
+    let s2 = new String('海滨学院hbxyhbxy');
+
+    console.log(s2.length);
+
+    // 1 大小写转换方法
+    let s3 = s2.toUpperCase();
+    document.write(s3);
+    console.log(s3);
+
+    // 2 指定字符的索引
+    console.log(s2.indexOf('h'));
+    console.log(s2.lastIndexOf('h'))
+
+    // 3 获取指定位置的字符
+    console.log(s2.charAt(6));
+    console.log(s2.charCodeAt(6));
+
+    // 4 获取子字符串
+    let s4 = s2.substring(2,4);
+    document.write(s4);
+
+    // 5 替换字符串
+    let s5 = s2.replace('海滨','沧州交通');
+    console.log(s5);
+
+    // 6 拆分字符串
+    let s6 = '133,3123,3453,tert,weatfsda';
+    let arr = s6.split(',');
+    console.log(arr);
+
+
+</script>
+
+</body>
+</html>

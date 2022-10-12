@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组对象</title>
+</head>
+<body>
+
+<script>
+
+    //数组创建方式
+    // 1 数组字面量方法创建
+    let arr1 = [1, 2, 3, 4, 5, 6, 7];
+    let arr2 = [1, false, 'abc'];
+
+    for (let i in arr2) {
+        console.log(arr2[i]);
+    }
+
+    // 2 通过Array构造函数创建
+    let arr3 = new Array();
+    arr3[0] = 'a';
+    arr3[1] = '10';
+
+    let arr4 = new Array('a', 'b', 'c');
+
+    // 3 通过...运算符构造新的数组
+    let arr5 = [0, ...arr1, 8];
+    for (let index in arr5) {
+        console.log(arr5[index]);
+    }
+
+    // 4 通过Array的工厂方法
+    let arr6 = Array.of('1', '2', '3');
+
+    let arr7 = Array.from(arr5);
+
+    for (let arr7Key in arr7) {
+        console.log(arr7Key);
+    }
+
+
+    //二维数组定义
+    //数组的元素是数组
+    let books = new Array(4);
+    //往books第一个元素放进一个长度为2的数组
+    books[0] = new Array(2);
+    //给books第一个元素的数组的两个元素赋值
+    books[0][0] = '书名';
+    books[0][1] = 'JavaScript参考指南';
+
+    //往books第二个元素放进一个长度为2的数组
+    books[1] = new Array(2);
+
+    //往books第三个元素放进一个长度为2的数组
+    books[2] = new Array(2);
+
+    //往books第四个元素放进一个长度为2的数组
+    books[3] = new Array(2);
+
+    books[1][0] = '作者';
+    books[1][1] = 'hbxy';
+
+    books[2][0] = '价格';
+    books[2][1] = '100.00';
+
+    books[3][0] = '出版社';
+    books[3][1] = '海滨学院';
+
+    for (let i in books) {
+
+        let item = books[i];
+
+        for (let j in item) {
+            console.log(item[j]);
+        }
+    }
+
+    //数组常用方法
+    let a1 = ['George', 'John', 'Thomas'];
+    let a2 = ['James', 'Andrew', 'Martin'];
+
+    // 1 数组链接
+    let a3 = a1.concat(a2);
+
+    console.log('a1 = ' + a1);
+    console.log('a3 = ' + a3);
+
+    // 2 join方法：把数组里面的元素链接成一个字符串(和字符串的split方法相逆)
+    let s1 = a1.join();
+
+    console.log('a1.join() = ' + a1.join());
+    console.log("a1.join(___) = " + a1.join('___'));
+
+    // 3 pop方法：移除数组最后的元素
+    console.log('执行pop前的a1 = ' + a1);
+    let s2 = a1.pop();
+    console.log('s2 = ' + s2);
+    console.log('执行pop后的a1 = ' + a1);
+
+    // 4 push方法：往数组尾部推入一个元素
+    console.log('执行push前的a1 = ' + a1);
+    a1.push('Kate');
+    console.log('执行push后的a1 = ' + a1);
+
+    // 5 shift方法：从数组头部移除一个元素
+    console.log('执行shift前的a2 = ' + a2);
+    let s3 = a2.shift();
+    console.log('s3 = ' + s3);
+    console.log('执行shift后的a2 = ' + a2);
+
+    // 6 reverse方法：颠倒数组中的元素(逆序)
+    console.log('执行reverse前的a3 = ' + a3);
+    a3.reverse();
+    console.log('执行reverse后的a3 = ' + a3);
+
+    // 7 sort方法：对数组元素进行排序
+    console.log('执行sort前的a3 = ' + a3);
+    a3.sort();
+    console.log('执行sort后的a3 = ' + a3);
+
+    // 8 slice方法：
+
+</script>
+
+</body>
+</html>

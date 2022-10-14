@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用内置函数</title>
+</head>
+<body>
+
+<input type="text" id="exp">
+<button type="button" onclick="cal()">计算</button>
+<br>
+<input type="text" id="result">
+
+<script>
+
+    function cal() {
+        let exp = document.getElementById("exp").value;
+
+        let result = eval(exp);
+
+        document.getElementById("result").value = result;
+    }
+
+</script>
+
+</body>
+</html>

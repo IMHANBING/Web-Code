@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数对象</title>
+</head>
+<body>
+
+<script>
+
+    // 函数定义
+    // 1 声明式定义
+    function userAdd(user) {
+        // 函数体
+        console.log(user);
+    }
+
+    userAdd();
+    let user = {
+        name: '张三',
+        age: 19
+    }
+    userAdd(user);
+
+    // 2 函数表达式
+    // 把表达式赋给一个变量，通过变量使用函数
+
+    // 2.1 有名字的函数表达式，一般用在递归比较有用
+    let myfun = function fact(i) {
+        if (i <= 1) {
+            return 1;
+        } else {
+            return i * fact(i - 1)
+        }
+    }
+    console.log(
+        '5! = ' + myfun(5)
+    );
+
+    // 2.2 函数表达式可以没有名字：叫做匿名函数
+    let myfun2 = function (i) {
+        console.log(i)
+    }
+    myfun2(3);
+
+    // 2.3 函数表达式作为参数，传给其他函数，在其他函数中执行
+    let arr = [2, 5, 2, 10, 3, 19, 30, 18];
+
+    arr.sort(function f(a, b) {
+        return a - b;
+    })
+    console.log(arr);
+
+    // 2.4 立即执行的函数表达式：IIFE
+    (function (count) {
+        for (let i = 0; i <= count; i++) {
+            console.log(i)
+        }
+    })(5);
+
+    // IIFE作为参数传递给其他函数
+
+    console.log((function (x, y) {
+        return x + y;
+    })(2, 3))
+
+    // 3 箭头函数
+    // 简化函数的定义，相当于匿名函数的变种
+    let abc = function (x) {
+        return x * x;
+    }
+    //使用箭头函数代替匿名函数
+    let xyz = x => x * x;
+
+    // 3.1 只有一个形式参数，函数主体只有一条执行语句
+    // 可以把{}省略掉，如果有返回值，也可以省略掉return
+
+    // 3.2 如果执行的语句有多条，{}不能省略；如果有返回值，return也不能省略
+    let f2 = x => {
+        if (x > 0) {
+            return x * x;
+        } else {
+            return -x;
+        }
+    }
+    console.log('f2(5) = ' + f2(5));
+    console.log('f2(-5) = ' + f2(-5));
+
+    // 3.3 如果形式参数不是一个的，需要()括起来
+
+    // 没有参数
+    let pi = () => 3.14;
+
+    // 两个及两个以上，需要括起来
+    let sum = (x, y) => {
+        return x + y;
+    }
+    console.log('sum(2, 3) = ' + sum(2, 3));
+    console.log('sum(2) = ' + sum(2));
+    console.log('sum(2, 3, 4) = ' + sum(2, 3, 4));
+
+    // 可变参数：实参比形参多的时候，把多余的参数放进一个rest对象里
+    let sum2 = (x, y, ...rest) => {
+        let sum = x + y;
+        if (rest.length > 0) {
+            for (let i = 0; i < rest.length; i++) {
+                sum = sum + rest[i];
+            }
+        }
+        return sum
+    }
+    console.log('sum2(4, 5) = ' + sum2(4, 5));
+    console.log('sum(1, 2, 3, 4, 5, 6, 7, 8, 9) = ' + sum2(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+</script>
+
+</body>
+</html>

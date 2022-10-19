@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location对象</title>
+</head>
+<body>
+
+<a href="13%20History对象.html">a标签跳转</a>
+
+<button onclick="toUrl()">通过js跳转到新地址</button>
+
+<button onclick="next()">通过js前进</button>
+
+<script>
+
+    function toUrl() {
+
+        // 跳转到新的页面
+        // 方法1：给location的href属性赋新的url
+        location.href = 'https://www.czjtu.edu.cn'
+
+        // 方法2：使用replace方法
+        // location.replace('https://www.czjtu.edu.cn');
+
+        // 方法2：使用assign方法
+        // location.assign('https://www.czjtu.edu.cn');
+
+        location.assign('13%20Histor对象.html');
+    }
+
+    console.log('history.length = ' + history.length);
+
+    function next() {
+        // history.go(1);
+        history.forward();
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window对象</title>
+</head>
+<body>
+
+<button onclick="alertFun()">打开提示框</button>
+<button onclick="confirmFun()">打开确认框</button>
+<button onclick="prompFun()">打开输入确认框</button>
+<button onclick="openWin()">打开新窗口</button>
+<button onclick="closeWin()">关闭新窗口</button>
+
+
+<script>
+
+    function alertFun() {
+        alert("这是提示框");
+    }
+
+    function confirmFun() {
+        let ok = confirm("您确认要删除这些内容吗？");
+        console.log("ok = " + ok);
+
+        if (ok) {
+
+        } else {
+
+        }
+    }
+
+    function prompFun() {
+        let str = prompt("请输入姓名：", "张三");
+
+        console.log("str = " + str);
+    }
+
+    let newwin;
+
+    function openWin() {
+        //返回一个句柄
+        newwin = window.open('https://www.baidu.com');
+    }
+
+    function closeWin() {
+        newwin.close();
+    }
+
+
+</script>
+
+</body>
+</html>

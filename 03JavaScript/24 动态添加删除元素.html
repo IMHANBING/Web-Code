@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态添加删除元素</title>
+</head>
+<body>
+
+<div id="div1">
+
+    <p>段落1</p>
+
+</div>
+
+<button type="button" onclick="addP()">添加元素</button>
+<button type="button" onclick="delP()">删除元素</button>
+
+<script>
+
+    function addP() {
+        // 1 获得要添加内容的容器
+        let div1 = document.getElementById('div1');
+
+        // 2 创建要添加的元素节点
+        // 2.1
+        let p = document.createElement('p');
+
+        // 创建p段落的内容：创建文本节点
+        let textnode = document.createTextNode('新的段落');
+
+        //把文本节点放进p段落元素
+        p.append(textnode);
+
+        // 3 把组装好的p元素节点放进div容器
+        div1.append(p);
+    }
+
+    function delP() {
+        // 1 获得要删除内容的容器
+        let div1 = document.getElementById('div1');
+        let list = div1.getElementsByTagName('p')
+
+        // 从容器删除指定索引的元素
+        div1.removeChild(list[list.length - 1]);  //从后往前删除
+        // div1.removeChild(list[0]);  //从前往后删除
+    }
+
+</script>
+
+</body>
+</html>

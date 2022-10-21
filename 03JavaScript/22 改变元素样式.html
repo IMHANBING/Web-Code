@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>改变选项样式</title>
+
+    <style>
+
+        .style1 {
+            color: #d2c3c4;
+            font-size: 100px;
+            background-color: aliceblue;
+        }
+
+        .style2 {
+            color: aquamarine;
+            font-size: 100px;
+            background-color: lightpink;
+        }
+
+    </style>
 </head>
 <body>
 
 <h1 id="h1">标题标题</h1>
 
 <button type="button" onclick="changeStyle()">改变样式</button>
+<button type="button" onclick="changeStyle1()">改变样式1</button>
+<button type="button" onclick="changeStyle2()">改变样式2</button>
 
 <script>
     function changeStyle() {
         let h1 = document.getElementById("h1");
+        h1.style.fontSize = 200;
+    }
 
-        h1.style.color = '#66f9cf';
-        h1.style.fontSize = 100;
+    function changeStyle1() {
+        let h1 = document.getElementById("h1");
+        h1.className = 'style1'
+    }
+
+    function changeStyle2() {
+        let h1 = document.getElementById("h1");
+        h1.className = 'style2'
     }
 </script>
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变value值</title>
+</head>
+<body>
+
+<input type="text" id="text1" value="李四">
+<br>
+<input type="text" id="text2" value="张三">
+
+<br>
+<button type="button" onclick="changeValue()">改变Value值</button>
+<br>
+
+<br>
+<input type="radio" id="r1" name="sex" value="0">男 &nbsp;
+<input type="radio" id="r2" name="sex" value="1">女 &nbsp;
+<input type="radio" id="r3" name="sex" value="2">不知道 &nbsp;
+
+<br>
+<button type="button" onclick="check(0)">设置选中男</button>
+<button type="button" onclick="check(1)">设置选中女</button>
+<button type="button" onclick="check(2)">设置选中不知道</button>
+
+<script>
+
+    function changeValue() {
+        document.getElementById('text2').value = document.getElementById('text1').value;
+    }
+
+    function check(n) {
+        let list = document.getElementsByName('sex');
+        for (let i = 0; i < list.length; i++) {
+            //判断当前radio值和传进来的n值是否相等
+            if (list[i].value == n) {
+                //若相等，设置该radio为选中状态
+                list[i].checked = true;
+                break;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

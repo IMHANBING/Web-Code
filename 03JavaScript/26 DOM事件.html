@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM事件</title>
+</head>
+<body>
+
+<button type="button" id="btn1">事件响应</button>
+
+<button type="button" id="btn2">事件响应</button>
+
+<script>
+
+    function hello() {
+        alert('事件响应');
+    }
+
+    let btn1 = document.getElementById('btn1');
+    //把事件和响应函数关联
+    btn1.addEventListener('click', hello, false);
+
+    let btn2 = document.getElementById('btn2')
+    btn2.addEventListener('click', function () {
+        console.log('使用匿名响应事件')
+    }, false);
+
+</script>
+
+</body>
+</html>

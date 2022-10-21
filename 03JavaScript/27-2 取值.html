@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let usename = sessionStorage.getItem('userName');
+
+    document.write(usename);
+
+    // 取对象
+    let user = sessionStorage.getItem('user')
+
+    // 将字符串转换为json对象：JSON.parse方法处理
+    console.log(JSON.parse(user))
+    console.log(user)
+
+
+</script>
+
+</body>
+</html>

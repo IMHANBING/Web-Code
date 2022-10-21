@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+</head>
+<body>
+
+<table id="mytable" width="50%" align="center" border="1" cellpadding="5" cellspacing="0">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>名称</th>
+        <th>性别</th>
+    </tr>
+    </thead>
+    <tbody id="mytbody">
+
+    </tbody>
+</table>
+
+<div align="center">
+    <button type="button" onclick="addrow()">添加行</button>
+    <button type="button" onclick="delrow()">删除行</button>
+</div>
+
+<script>
+    function addrow() {
+        let name = prompt("请输入姓名");
+        let sex = prompt("请输入性别")
+
+        if (name != null) {
+            // 1 得到要插入的容器：tbody
+            let mytbody = document.getElementById('mytbody');
+
+            // 2 往tbody插入新的行：需要指定插入的位置（索引）
+            let index = mytbody.rows.length;    //现有表格长度作为新插入行的索引
+            let newrow = mytbody.insertRow(index);
+
+            // 3 往新行插入单元格
+            let cell0 = newrow.insertCell(0);
+            // 设置单元格的内容
+            cell0.innerHTML = index + 1;
+
+            let cell1 = newrow.insertCell(1);
+            cell1.innerHTML = name;
+
+            let cell2 = newrow.insertCell(2);
+            cell2.innerHTML = sex;
+        }
+    }
+
+    function delrow() {
+        let mytbody = document.getElementById('mytbody');
+
+        // mytbody.deleteRow(0);   //从前往后
+        mytbody.deleteRow(mytbody.rows.length - 1); //从后往前
+    }
+
+</script>
+
+</body>
+</html>

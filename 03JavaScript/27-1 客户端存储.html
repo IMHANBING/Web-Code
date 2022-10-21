@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户端存储</title>
+</head>
+<body>
+
+<a href="27-2%20取值.html">跳转</a>
+
+<script>
+
+    // localStorage
+    // 放入数据
+    sessionStorage.setItem('userName', '张三');
+
+    // 放入对象
+    let user = {
+        name: '李四',
+        age: 20
+    }
+
+    //需要使用JSON.stringify
+    sessionStorage.setItem('user', JSON.stringify(user));
+
+</script>
+
+</body>
+</html>

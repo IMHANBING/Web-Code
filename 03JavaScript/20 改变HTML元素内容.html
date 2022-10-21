@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变元素内容</title>
+</head>
+<body>
+
+<p id="p1">段落文字</p>
+
+<h1 id="h1">标题文字</h1>
+
+<button type="button" onclick="changeText()">改变段落文字</button>
+<button type="button" onclick="changeHeader()">改变标题文字</button>
+
+<script>
+    function changeText() {
+        // document.getElementById("p1").innerText = "新的段落文字";
+        document.getElementById("p1").innerHTML = "<a href = 'https://www.czjtu.edu.cn'>海滨学院</a>";
+    }
+
+    function changeHeader() {
+        document.getElementById("h1").innerText = "新的标题文字";
+    }
+</script>
+
+</body>
+</html>

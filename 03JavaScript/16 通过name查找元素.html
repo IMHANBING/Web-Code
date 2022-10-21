@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<input type="radio" name="sex" value="0">男 &nbsp;
-<input type="radio" name="sex" value="1">女 &nbsp;
-<input type="radio" name="sex" value="2">不知道 &nbsp;
+<input type="radio" id="r1" name="sex" value="0">男 &nbsp;
+<input type="radio" id="r2" name="sex" value="1">女 &nbsp;
+<input type="radio" id="r3" name="sex" value="2">不知道 &nbsp;
 
 <button type="button" onclick="findByName()">通过name查找元素</button>
 
@@ -17,11 +17,26 @@
     function findByName() {
         let list = document.getElementsByName("sex");
 
+        // 通过程序判断哪个radio被选中，取出被选到的radio的值
         for (let i = 0; i < list.length; i++) {
             let item = list[i];
             if (item.checked) {
                 console.log(item.value);
             }
+        }
+
+        let value;
+        let r1 = document.getElementById("r1");
+        if (r1.checked) {
+            value = r1.value;
+        }
+        let r2 = document.getElementById("r1");
+        if (r2.checked) {
+            value = r2.value;
+        }
+        let r3 = document.getElementById("r1");
+        if (r3.checked) {
+            value = r3.value;
         }
     }
 

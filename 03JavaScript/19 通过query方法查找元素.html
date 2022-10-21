@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过query方法查找元素</title>
+</head>
+<body>
+
+<div id="div1" name="divname" class="class1">
+
+    <p>段落1</p>
+    <p>段落2</p>
+    <p>段落3</p>
+
+</div>
+
+<button type="button" onclick="findByQuerySelector()">通过QuerySelector查找元素</button>
+<button type="button" onclick="findByQuerySelectorAll()">通过QuerySelectorAll查找元素</button>
+
+
+<script>
+
+    function findByQuerySelector() {
+        let div1 = document.querySelector("#div1");
+        let p = div1.querySelector('p');
+        console.log(p.innerText);
+    }
+
+    function findByQuerySelectorAll() {
+        let div1 = document.querySelectorAll("#div1")[0];
+        let p = div1.querySelectorAll('p');
+        for (let i = 0; i < p.length; i++) {
+            console.log(p[i].innerText);
+        }
+    }
+
+</script>
+
+</body>
+</html>

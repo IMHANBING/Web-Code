@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="radio" name="sex" checked value="0">男&nbsp;
+<input type="radio" name="sex" value="1">女&nbsp;
+<input type="radio" name="sex" value="2">不知道&nbsp;
+
+<br><br>
+<input type="checkbox" name="hobby" checked value="游泳">游泳<br>
+<input type="checkbox" name="hobby" value="电影">电影<br>
+<input type="checkbox" name="hobby" value="音乐">音乐<br>
+<input type="checkbox" name="hobby" value="旅游">旅游<br>
+
+<br><br>
+<select id="clazz" name="clazz" onchange="selected()">
+    <option value="-1">请选择班级</option>
+    <option value="1901">1901</option>
+    <option value="1902">1902</option>
+    <option value="1903">1903</option>
+    <option value="1904">1904</option>
+    <option value="1905">1905</option>
+    <option value="1906">1906</option>
+    <option value="1907">1907</option>
+    <option value="1908">1908</option>
+    <option value="1909">1909</option>
+    <option value="1910">1910</option>
+</select>
+
+<br><br>
+<button type="button" onclick="save()">取值</button>
+<script>
+    function save() {
+        //1 单选按钮取值
+        //方法一:循环所有单选按钮,判断是否被选中,选中则取他的值
+        let sexs = document.getElementsByName('sex');
+        //取值
+        let sexvalue = 0;
+        sexs.forEach(item => {
+            if (item.checked) {
+                sexvalue = item.value;
+            }
+        })
+        //方法二:通过querySelector,获得属性name="sex",并且被选中的单选按钮,取他的值
+        //let sexvalue = document.querySelector('input[name="sex"]:checked').value;
+
+        let hobbys = document.getElementsByName('hobby');
+        //取值
+        hobbys.forEach(item => {
+            if (item.checked) {
+                console.log(item.value);
+            }
+        })
+
+        let hobbys2 = document.querySelectorAll('input[name="hobby"]:checked')
+        hobbys2.forEach(item => {
+            console.log(item.value);
+
+        })
+
+        //下拉框取值
+        //
+        let clazzvalue = document.getElementById("clazz").value
+
+        // let clazz = document.getElementById('clazz')
+        // let list = clazz.options;
+        // for (let i = 0; i < list.length; i++) {
+        //   if (list[i].selected) {
+        //     clazzvalue=list[i].value;
+        //   }
+        // }
+
+
+    }
+
+    function selected() {
+        alert(document.getElementById("clazz").value)
+    }
+</script>
+</body>
+</html>

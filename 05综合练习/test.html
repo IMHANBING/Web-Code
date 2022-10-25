@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1 {
+            width: 500px;
+            border: 1px solid red;
+        }
+
+        .table1 {
+            margin: 0 auto;
+            width: 400px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <table id="mytable" class="table1">
+        <thead>
+        <tr>
+            <th>
+                xxxxx
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>111</td>
+        </tr>
+        <tr>
+            <td>222</td>
+        </tr>
+        <tr>
+            <td>333</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    mytable = document.getElementById('mytable')
+
+    console.log(mytable.rows.length)
+
+    console.log(mytable.tBodies)
+
+    let tbody = mytable.tBodies[0];
+    let newrow = tbody.insertRow(tbody.rows.length);
+
+    let cel0 = newrow.insertCell(0);
+    cel0.innerHTML = '444';
+
+</script>
+</body>
+</html>

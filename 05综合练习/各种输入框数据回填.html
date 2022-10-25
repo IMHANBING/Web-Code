@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据回填</title>
+</head>
+<body>
+
+<input type="radio" name="sex" value="0">男&nbsp;
+<input type="radio" name="sex" value="1">女&nbsp;
+<input type="radio" name="sex" value="2">不知道&nbsp;
+
+<br><br>
+<input type="checkbox" name="hobby" value="游泳">游泳<br>
+<input type="checkbox" name="hobby" value="电影">电影<br>
+<input type="checkbox" name="hobby" value="音乐">音乐<br>
+<input type="checkbox" name="hobby" value="旅游">旅游<br>
+
+<br><br>
+<select id="clazz" name="clazz">
+    <option value="-1">请选择班级</option>
+    <option value="1901">1901</option>
+    <option value="1902">1902</option>
+    <option value="1903">1903</option>
+    <option value="1904">1904</option>
+    <option value="1905">1905</option>
+    <option value="1906">1906</option>
+    <option value="1907">1907</option>
+    <option value="1908">1908</option>
+    <option value="1909">1909</option>
+    <option value="1910">1910</option>
+</select>
+<br><br>
+<button type="button" onclick="set()">回填</button>
+
+<script>
+    function set() {
+        //单选按钮数据回填
+        let sex = 0;
+        let sexs = document.getElementsByName('sex');
+        //回填
+        sexs.forEach(item => {
+            if (item.value == sex) {
+                item.checked = true;
+            }
+        })
+
+        let myhobby = '旅游,电影'
+        let hobbys = document.getElementsByName('hobby');
+        //回填
+        hobbys.forEach(item => {
+            let b = myhobby.indexOf(item.value);
+            if (b != -1) {
+                item.checked = true;
+            }
+        })
+
+        let myclazz = 1907
+        let clazz = document.getElementById('clazz')
+        let list = clazz.options;
+        //回填
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].value == myclazz) {
+                list[i].selected = true;
+            }
+        }
+    }
+</script>
+</body>
+</html>

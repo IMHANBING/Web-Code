@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书信息</title>
+</head>
+<body>
+<div style="width: 500px; margin: 0 auto;">
+    <h1>《<span id="bookTitle"></span>》基本信息</h1>
+    <hr>
+    <p>图书名称：<span id="bookName"></span></p>
+    <p>图书价格：<span id="bookPrice"></span></p>
+    <p>图书类型：<span id="bookType"></span></p>
+    <p>出版社：<span id="publisher"></span></p>
+    <p>图书简介：<span id="bookInfo"></span></p>
+
+    <br>
+    <a href="booklist.html">返回</a>
+</div>
+<script>
+    let selectedIndex = sessionStorage.getItem('selectedIndex');
+    let booklist = JSON.parse(sessionStorage.getItem('booklist'));
+
+    //显示据填
+    initInfo();
+
+    function initInfo() {
+        let book = booklist[selectedIndex];
+
+        document.querySelector('#bookTitle').innerHTML = book.bookName;
+        document.querySelector('#bookName').innerHTML = book.bookName;
+        document.querySelector('#bookPrice').innerHTML = book.bookPrice;
+        if (book.bookType == 0) {
+            document.querySelector('#bookType').innerHTML = '技术';
+        } else if (book.bookType == 1) {
+            document.querySelector('#bookType').innerHTML = '小说';
+        } else if (book.bookType == 2) {
+            document.querySelector('#bookType').innerHTML = '社科';
+        }
+        if (book.publisher == 0) {
+            document.querySelector('#publisher').innerHTML = '电子工业出版社';
+        } else if (book.publisher == 1) {
+            document.querySelector('#publisher').innerHTML = '机械工业出版社';
+        } else if (book.publisher == 2) {
+            document.querySelector('#publisher').innerHTML = '人民文学出版社';
+        } else if (book.publisher == 3) {
+            document.querySelector('#publisher').innerHTML = '清华大学出版社';
+        } else if (book.publisher == 4) {
+            document.querySelector('#publisher').innerHTML = '人民邮电出版社';
+        }
+
+        document.querySelector('#bookInfo').innerHTML = book.bookInfo;
+    }
+</script>
+</body>
+</html>

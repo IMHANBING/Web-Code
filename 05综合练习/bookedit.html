@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改图书</title>
+</head>
+<body>
+
+
+<form id="frmbook" method="post">
+    <input type="hidden" id="bookId" name="bookId">
+    <table width="50%"
+           align="center"
+           border="0"
+           cellspacing="0"
+           cellpadding="10">
+        <tr>
+            <td>
+                修改图书信息&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%"
+                       align="center"
+                       border="1"
+                       cellspacing="0"
+                       cellpadding="10">
+                    <tr>
+                        <td>名称</td>
+                        <td>
+                            <input type="text" id="bookName" name="bookName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>价格</td>
+                        <td>
+                            <input type="text" id="bookPrice" name="bookPrice">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>类型</td>
+                        <td>
+                            <input type="radio" name="bookType" value="0" checked>技术&nbsp;
+                            <input type="radio" name="bookType" value="1">小说&nbsp;
+                            <input type="radio" name="bookType" value="2">社科&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>出版社</td>
+                        <td>
+                            <select id="publisher">
+                                <option value="-1">选择出版社</option>
+                                <option value="0">电子工业出版社</option>
+                                <option value="1">机械工业出版社</option>
+                                <option value="2">人民文学出版社</option>
+                                <option value="3">清华大学出版社</option>
+                                <option value="4">人民邮电出版社</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>简介</td>
+                        <td>
+                            <textarea id="bookInfo" rows="5" cols="30"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <button type="button" onclick="save()">保存</button>
+                <button type="button" onclick="cancel()">取消</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+
+    let selectedIndex = sessionStorage.getItem('selectedIndex');
+    let booklist = JSON.parse(sessionStorage.getItem('booklist'));
+
+    //回填数据
+    initForm();
+
+    function initForm() {
+        let book = booklist[selectedIndex];
+
+        document.querySelector('#bookId').value = book.bookId;
+        document.querySelector('#bookName').value = book.bookName;
+        document.querySelector('#bookPrice').value = book.bookPrice;
+        //根据要修改的图书类型,设置单选按钮选中状态
+        let bookTypes = document.getElementsByName("bookType");
+        bookTypes.forEach(item => {
+            if (item.value == book.bookType) {
+                item.checked = true;
+            }
+        })
+        //根据要修改的图书类型,设置下拉框选中状态
+        let publisher = document.getElementById('publisher');
+        let list = publisher.options;
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].value == book.publisher) {
+                list[i].selected = true;
+            }
+        }
+
+        document.querySelector('#bookInfo').value = book.bookInfo;
+    }
+
+    function save() {
+        //获得图书信息
+        let bookTypeValue = 0;
+        let bookTypes = document.getElementsByName("bookType");
+        bookTypes.forEach(item => {
+            if (item.checked) {
+                bookTypeValue = item.value;
+            }
+        })
+        let publisherValue = 0;
+        let publisher = document.getElementById('publisher');
+        let list = publisher.options;
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].selected) {
+                publisherValue = list[i].value;
+            }
+        }
+
+        let book = {
+            bookId: document.querySelector('#bookId').value,
+            bookName: document.querySelector('#bookName').value,
+            bookPrice: document.querySelector('#bookPrice').value,
+            bookType: bookTypeValue,
+            publisher: publisherValue,
+            bookInfo: document.querySelector('#bookInfo').value
+        }
+        //修改数组中的图书
+        booklist.splice(selectedIndex, 1, book);
+
+        //保存进sessionStorage
+        sessionStorage.setItem('booklist', JSON.stringify(booklist))
+
+        location.href = 'booklist.html';
+    }
+
+    function cancel() {
+        location.href = 'booklist.html';
+    }
+</script>
+</body>
+</html>
